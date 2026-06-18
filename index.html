@@ -513,10 +513,13 @@
       color: var(--text1)
     }
 
-    .club-row::before {
-      content: '🏀';
-      font-size: 14px;
+    .club-flag {
+      font-size: 18px;
       flex-shrink: 0
+    }
+
+    .club-row::before {
+      content: none
     }
 
     /* ── RESUME SECTION ── */
@@ -951,81 +954,98 @@
       }
 
       .hamburger {
-        display: flex
+        display: flex !important
       }
 
       .nav-links {
-        display: none;
+        display: none !important;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(6, 8, 10, .97);
+        background: rgba(6, 8, 10, .98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 36px;
-        z-index: 105
+        gap: 40px;
+        z-index: 105;
+        padding: 0;
+        margin: 0
       }
 
       .nav-links.open {
-        display: flex
-      }
-
-      .nav-links a {
-        font-size: 20px;
-        color: var(--text2)
+        display: flex !important
       }
 
       .nav-links li {
         list-style: none
       }
 
+      .nav-links a {
+        font-size: 22px;
+        color: var(--text1);
+        font-weight: 600
+      }
+
       #hero {
         min-height: auto;
-        padding: 100px 20px 60px
+        padding: 90px 20px 40px
       }
 
       h1.hero-name {
-        font-size: 56px;
+        font-size: clamp(52px, 14vw, 72px);
         letter-spacing: -2px
       }
 
       .hero-title {
-        font-size: 14px;
-        margin-bottom: 28px
+        font-size: 15px;
+        margin-bottom: 24px;
+        line-height: 1.6
       }
 
       .hero-tag {
         font-size: 10px;
-        padding: 5px 12px;
-        margin-bottom: 20px
+        padding: 6px 14px;
+        margin-bottom: 18px
       }
 
       .hero-stats {
-        gap: 20px;
-        margin-bottom: 32px
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+        width: 100%
+      }
+
+      .stat {
+        background: rgba(232, 169, 18, .06);
+        border: 1px solid rgba(232, 169, 18, .1);
+        border-radius: 12px;
+        padding: 12px 8px
       }
 
       .stat-n {
-        font-size: 24px
+        font-size: 26px
       }
 
       .stat-l {
-        font-size: 9px
+        font-size: 10px
       }
 
       .hero-btns {
-        gap: 10px
+        gap: 10px;
+        flex-direction: column;
+        width: 100%
       }
 
       .btn-primary,
       .btn-secondary {
-        padding: 12px 24px;
-        font-size: 13px;
-        width: 100%
+        padding: 14px 24px;
+        font-size: 15px;
+        width: 100%;
+        text-align: center
       }
 
       .scroll-hint {
@@ -1033,41 +1053,66 @@
       }
 
       section {
-        padding: 56px 16px
+        padding: 48px 16px
       }
 
       .section-title {
-        font-size: 28px;
-        margin-bottom: 28px
+        font-size: clamp(26px, 7vw, 36px);
+        margin-bottom: 24px
       }
 
       .section-label {
-        font-size: 9px;
+        font-size: 10px;
         margin-bottom: 8px
       }
 
+      .container {
+        max-width: 100%;
+        padding: 0
+      }
+
       .ventures-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 16px
       }
 
       .venture-card {
-        padding: 20px
+        padding: 16px
       }
 
       .venture-img {
-        height: 140px
+        height: 180px
+      }
+
+      .venture-name {
+        font-size: 18px
+      }
+
+      .venture-desc {
+        font-size: 14px
       }
 
       .bball-inner,
       .ai-inner,
       .resume-wrap {
-        grid-template-columns: 1fr;
-        gap: 32px
+        grid-template-columns: 1fr !important;
+        gap: 28px
       }
 
       .bball-facts {
         grid-template-columns: 1fr 1fr
+      }
+
+      .fact-box {
+        padding: 14px
+      }
+
+      .fact-title {
+        font-size: 9px
+      }
+
+      .fact-val {
+        font-size: 14px
       }
 
       .clubs-list {
@@ -1076,83 +1121,89 @@
 
       .club-row {
         padding: 10px 12px;
-        font-size: 12px
+        font-size: 13px
       }
 
       .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px
       }
 
       .contact-card {
-        padding: 18px 12px
+        padding: 20px 14px
       }
 
       .contact-icon {
-        font-size: 24px;
-        margin-bottom: 6px
+        font-size: 28px;
+        margin-bottom: 8px
       }
 
       .contact-label {
-        font-size: 12px
+        font-size: 14px
       }
 
       .contact-val {
-        font-size: 10px
+        font-size: 11px
       }
 
       .ai-card {
         padding: 20px
       }
 
+      .ai-feat-title {
+        font-size: 15px
+      }
+
+      .ai-feat-desc {
+        font-size: 13px
+      }
+
       .exp-item {
         padding-left: 18px
+      }
+
+      .exp-title {
+        font-size: 16px
+      }
+
+      .exp-company {
+        font-size: 13px
+      }
+
+      .exp-points li {
+        font-size: 14px
       }
 
       .edu-box {
         padding: 16px
       }
 
-      .container {
-        max-width: 100%
+      .edu-school {
+        font-size: 15px
+      }
+
+      .skill-row {
+        font-size: 14px
       }
 
       .hero-glow {
         width: 400px;
         height: 400px
       }
-    }
 
-    @media(max-width:480px) {
       .nav-social {
-        width: 28px !important;
-        height: 28px !important
+        width: 30px !important;
+        height: 30px !important
       }
 
       .nav-social svg {
-        width: 14px !important;
-        height: 14px !important
+        width: 15px !important;
+        height: 15px !important
       }
     }
 
     @media(max-width:380px) {
-      h1.hero-name {
-        font-size: 44px
-      }
-
-      .hero-stats {
-        gap: 14px
-      }
-
-      .stat-n {
-        font-size: 20px
-      }
-
       .bball-facts {
-        grid-template-columns: 1fr
-      }
-
-      .contact-grid {
         grid-template-columns: 1fr
       }
     }
@@ -1251,10 +1302,12 @@
       <div class="ventures-grid">
 
         <div class="venture-card fade-up">
-          <div class="venture-img" style="height:160px;border-radius:12px;background:linear-gradient(135deg,#1a1510,#2a1f10);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid rgba(232,169,18,.12)">
-            <div style="text-align:center">
-              <div style="font-size:48px;margin-bottom:8px">🏢</div>
-              <div style="font-size:11px;font-family:var(--mono);color:var(--gold);letter-spacing:2px;text-transform:uppercase">Strong Wave</div>
+          <div class="venture-img" style="border-radius:12px;background:linear-gradient(135deg,#1a1208,#2d1e08);display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,169,18,.15);position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(232,169,18,.03) 20px,rgba(232,169,18,.03) 40px)"></div>
+            <div style="text-align:center;position:relative;z-index:1">
+              <div style="font-size:44px;margin-bottom:6px">📈</div>
+              <div style="font-size:18px;font-weight:800;color:var(--gold);letter-spacing:1px">STRONG WAVE</div>
+              <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:2px;margin-top:4px">SERVICE</div>
             </div>
           </div>
           <div class="venture-name">Strong Wave Service</div>
@@ -1283,10 +1336,12 @@
         </div>
 
         <div class="venture-card fade-up">
-          <div class="venture-img" style="height:160px;border-radius:12px;background:linear-gradient(135deg,#0a1520,#1a2530);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid rgba(232,169,18,.12)">
-            <div style="text-align:center">
-              <div style="font-size:48px;margin-bottom:8px">🏀</div>
-              <div style="font-size:11px;font-family:var(--mono);color:var(--gold);letter-spacing:2px;text-transform:uppercase">Coach · Mindset</div>
+          <div class="venture-img" style="border-radius:12px;background:linear-gradient(135deg,#0c1018,#1a1428);display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,169,18,.15);position:relative;overflow:hidden">
+            <div style="position:absolute;top:-30px;right:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(232,169,18,.1),transparent);pointer-events:none"></div>
+            <div style="text-align:center;position:relative;z-index:1">
+              <div style="font-size:50px;margin-bottom:6px">🏀</div>
+              <div style="font-size:16px;font-weight:800;color:var(--gold);letter-spacing:1px">MINDSET COACH</div>
+              <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:2px;margin-top:4px">CAMPS · BOOTCAMPS</div>
             </div>
           </div>
           <div class="venture-name">Pro Basketball Trainer, Mental Coach</div>
@@ -1329,10 +1384,12 @@
         </div>
 
         <div class="venture-card fade-up">
-          <div class="venture-img" style="height:160px;border-radius:12px;background:linear-gradient(135deg,#10150a,#1a2510);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid rgba(232,169,18,.12)">
-            <div style="text-align:center">
-              <div style="font-size:48px;margin-bottom:8px">🎓</div>
-              <div style="font-size:11px;font-family:var(--mono);color:var(--gold);letter-spacing:2px;text-transform:uppercase">Formation</div>
+          <div class="venture-img" style="border-radius:12px;background:linear-gradient(135deg,#0a1210,#142018);display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,169,18,.15);position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 25px,rgba(232,169,18,.02) 25px,rgba(232,169,18,.02) 50px)"></div>
+            <div style="text-align:center;position:relative;z-index:1">
+              <div style="font-size:44px;margin-bottom:6px">🎓</div>
+              <div style="font-size:18px;font-weight:800;color:var(--gold);letter-spacing:1px">FORMATIONPRO</div>
+              <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:2px;margin-top:4px">CPF · QUALIOPI · SST</div>
             </div>
           </div>
           <div class="venture-name">FormationPro</div>
@@ -1348,10 +1405,12 @@
         </div>
 
         <div class="venture-card fade-up">
-          <div class="venture-img" style="height:160px;border-radius:12px;background:linear-gradient(135deg,#15100a,#251a0a);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid rgba(232,169,18,.12)">
-            <div style="text-align:center">
-              <div style="font-size:48px;margin-bottom:8px">🥤</div>
-              <div style="font-size:11px;font-family:var(--mono);color:var(--gold);letter-spacing:2px;text-transform:uppercase">Keo Jus</div>
+          <div class="venture-img" style="border-radius:12px;background:linear-gradient(135deg,#14100a,#221808);display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,169,18,.15);position:relative;overflow:hidden">
+            <div style="position:absolute;bottom:-20px;left:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(255,160,40,.08),transparent);pointer-events:none"></div>
+            <div style="text-align:center;position:relative;z-index:1">
+              <div style="font-size:44px;margin-bottom:6px">🍊</div>
+              <div style="font-size:18px;font-weight:800;color:var(--gold);letter-spacing:1px">KEO JUS</div>
+              <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:2px;margin-top:4px">🇨🇮 CÔTE D'IVOIRE</div>
             </div>
           </div>
           <div class="venture-name">Keo Jus</div>
@@ -1407,19 +1466,19 @@
             style="margin-bottom:16px;font-size:12px;font-family:var(--mono);color:var(--text3);letter-spacing:1px;text-transform:uppercase">
             Career Clubs</div>
           <div class="clubs-list">
-            <div class="club-row">Rouen Métropole Basket — NM1 Champion (2023)</div>
-            <div class="club-row">Kaysersberg Ammerschwihr — NM1 (2021-22)</div>
-            <div class="club-row">Aix Maurienne Savoie Basket — PRO B (2019-20)</div>
-            <div class="club-row">Chartres Métropole Basket — PRO B</div>
-            <div class="club-row">STB Le Havre — PRO B</div>
-            <div class="club-row">CSP Limoges — JEEP ELITE (U21)</div>
-            <div class="club-row">CCRB Châlons-Reims — JEEP ELITE</div>
-            <div class="club-row">Psyhiko Athens — A2 Greece</div>
-            <div class="club-row">Timba Timisoara — 1st Division</div>
-            <div class="club-row">Grindavik — 1st Division</div>
-            <div class="club-row">Portland State University — NCAA1</div>
-            <div class="club-row">Snow College — Utah</div>
-            <div class="club-row">Midland College — Texas</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> Rouen Métropole Basket — NM1 Champion (2023)</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> Kaysersberg Ammerschwihr — NM1 (2021-22)</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> Aix Maurienne Savoie Basket — PRO B (2019-20)</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> Chartres Métropole Basket — PRO B</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> STB Le Havre — PRO B</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> CSP Limoges — JEEP ELITE (U21)</div>
+            <div class="club-row"><span class="club-flag">🇫🇷</span> CCRB Châlons-Reims — JEEP ELITE</div>
+            <div class="club-row"><span class="club-flag">🇬🇷</span> Psyhiko Athens — A2 Greece</div>
+            <div class="club-row"><span class="club-flag">🇷🇴</span> Timba Timisoara — 1st Division</div>
+            <div class="club-row"><span class="club-flag">🇮🇸</span> Grindavik — 1st Division</div>
+            <div class="club-row"><span class="club-flag">🇺🇸</span> Portland State University — NCAA1</div>
+            <div class="club-row"><span class="club-flag">🇺🇸</span> Snow College — Utah</div>
+            <div class="club-row"><span class="club-flag">🇺🇸</span> Midland College — Texas</div>
           </div>
         </div>
       </div>
