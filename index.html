@@ -1292,8 +1292,8 @@
       <select class="nav-cta"
         style="background:#0a0800; border:1px solid rgba(232,169,18,0.3); color:var(--gold); font-size:12px; padding:5px 8px; cursor:pointer; border-radius:8px;"
         onchange="translatePage(this.value)">
-        <option value="en">🇺🇸 EN</option>
         <option value="fr">🇫🇷 FR</option>
+        <option value="en">🇺🇸 EN</option>
       </select>
       <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1456,7 +1456,7 @@
     <div class="container">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
         <img src="images/bball-chartres.jpeg" alt="Tiegbe Bamba — Chartres warmup" style="width:100%;height:140px;object-fit:cover;border-radius:10px">
-        <img src="images/bball-collage.png" alt="Tiegbe Bamba — Career moments" style="width:100%;height:140px;object-fit:cover;border-radius:10px">
+        <img src="images/bball-dunk.jpeg" alt="Tiegbe Bamba — Dunk" style="width:100%;height:140px;object-fit:cover;object-position:top center;border-radius:10px">
         <img src="images/bball-civ.jpeg" alt="Tiegbe Bamba — Côte d'Ivoire National Team" style="width:100%;height:140px;object-fit:cover;object-position:top center;border-radius:10px">
         <img src="images/bball-training.jpeg" alt="Tiegbe Bamba — Training session" style="width:100%;height:140px;object-fit:cover;object-position:center;border-radius:10px">
       </div>
@@ -1812,26 +1812,33 @@
           Open to consulting mandates, coaching partnerships, AI integration projects, and B2B business conversations.
         </p>
       </div>
-      <div class="contact-grid fade-up">
-        <div class="contact-card">
-          <div class="contact-icon">🤖</div>
-          <div class="contact-label">AI Agent</div>
-          <div class="contact-val">Multi AI Agent System</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px" class="fade-up">
+        <div style="background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:transform .3s,border-color .3s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" style="margin-bottom:14px;filter:drop-shadow(0 4px 12px rgba(232,169,18,.3))">
+            <rect x="4" y="14" width="56" height="40" rx="6" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <rect x="14" y="24" width="36" height="6" rx="3" fill="var(--gold)" opacity=".3"/>
+            <rect x="14" y="34" width="24" height="4" rx="2" fill="var(--gold)" opacity=".2"/>
+            <rect x="14" y="42" width="30" height="4" rx="2" fill="var(--gold)" opacity=".15"/>
+            <path d="M32 4 L40 14 L24 14 Z" fill="var(--gold)" opacity=".5"/>
+            <circle cx="48" cy="28" r="6" fill="var(--gold)" opacity=".25"/>
+            <path d="M45 28 L48 25 L51 28 L48 31 Z" fill="var(--gold)" opacity=".4"/>
+          </svg>
+          <div style="font-size:18px;font-weight:800;color:var(--text1);margin-bottom:6px">Purgo Clean</div>
+          <div style="font-size:12px;color:var(--text3);font-family:var(--mono);letter-spacing:.5px">B2B Cleaning · Île-de-France</div>
+          <div style="margin-top:10px;font-size:12px;color:var(--gold);font-weight:600">2024 — Present</div>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon">🏢</div>
-          <div class="contact-label">Strong Wave Service</div>
-          <div class="contact-val">Consulting & Marketing</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">🧹</div>
-          <div class="contact-label">Purgo Clean</div>
-          <div class="contact-val">B2B · Île-de-France</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">🏀</div>
-          <div class="contact-label">Basketball Coaching</div>
-          <div class="contact-val">Mindset · Performance</div>
+        <div style="background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:transform .3s,border-color .3s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" style="margin-bottom:14px;filter:drop-shadow(0 4px 12px rgba(232,169,18,.3))">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M32 8 C32 8 20 20 20 32 C20 44 32 56 32 56 C32 56 44 44 44 32 C44 20 32 8 32 8Z" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".4"/>
+            <line x1="6" y1="32" x2="58" y2="32" stroke="var(--gold)" stroke-width="1.5" opacity=".3"/>
+            <path d="M22 18 C26 22 28 28 28 32" stroke="var(--gold)" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="4" fill="var(--gold)" opacity=".6"/>
+            <path d="M36 28 L40 24" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+          </svg>
+          <div style="font-size:18px;font-weight:800;color:var(--text1);margin-bottom:6px">Basketball Coaching</div>
+          <div style="font-size:12px;color:var(--text3);font-family:var(--mono);letter-spacing:.5px">Mindset · Performance · Camps</div>
+          <div style="margin-top:10px;font-size:12px;color:var(--gold);font-weight:600">2015 — Present</div>
         </div>
       </div>
       <div
@@ -2101,6 +2108,8 @@
       "AI Agent": "Agent IA",
       "Consulting & Marketing": "Consulting & Marketing",
       "Basketball Coaching": "Coaching Basket",
+      "B2B Cleaning · Île-de-France": "Nettoyage B2B · Île-de-France",
+      "Mindset · Performance · Camps": "Mentalité · Performance · Camps",
       "Mindset · Performance": "Mentalité · Performance",
       // Bio card above footer
       "Entrepreneur · Pro Basketball Trainer · AI Builder": "Entrepreneur · Basket Trainer Pro · Builder IA",
@@ -2138,7 +2147,10 @@
         }
       }
     }
-    window.addEventListener('DOMContentLoaded', () => collectTextNodes(document.body));
+    window.addEventListener('DOMContentLoaded', () => {
+      collectTextNodes(document.body);
+      setTimeout(() => translatePage('fr'), 50);
+    });
 
     window.translatePage = function (lang) {
       allNodes.forEach(item => {
