@@ -990,80 +990,90 @@
       }
 
       #hero {
-        min-height: auto;
-        padding: 90px 20px 40px
+        min-height: auto !important;
+        padding: 56px 16px 24px !important
+      }
+
+      .hero-glow {
+        width: 300px !important;
+        height: 300px !important
       }
 
       h1.hero-name {
-        font-size: clamp(52px, 14vw, 72px);
-        letter-spacing: -2px
+        font-size: clamp(40px, 12vw, 56px) !important;
+        letter-spacing: -2px;
+        margin-bottom: 4px !important
       }
 
       .hero-title {
-        font-size: 15px;
-        margin-bottom: 24px;
-        line-height: 1.6
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        line-height: 1.4 !important
       }
 
       .hero-tag {
-        font-size: 10px;
-        padding: 6px 14px;
-        margin-bottom: 18px
+        font-size: 9px !important;
+        padding: 5px 12px !important;
+        margin-bottom: 12px !important
       }
 
       .hero-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 28px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
         width: 100%
       }
 
       .stat {
         background: rgba(232, 169, 18, .06);
         border: 1px solid rgba(232, 169, 18, .1);
-        border-radius: 12px;
-        padding: 12px 8px
+        border-radius: 10px;
+        padding: 8px 6px !important
       }
 
       .stat-n {
-        font-size: 26px
+        font-size: 22px !important
       }
 
       .stat-l {
-        font-size: 10px
+        font-size: 9px !important
       }
 
       .hero-btns {
-        gap: 10px;
+        gap: 8px !important;
         flex-direction: column;
         width: 100%
       }
 
       .btn-primary,
       .btn-secondary {
-        padding: 14px 24px;
-        font-size: 15px;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
         width: 100%;
         text-align: center
       }
 
       .scroll-hint {
-        display: none
+        display: none !important
       }
 
       section {
-        padding: 48px 16px
+        padding: 24px 14px !important
+      }
+
+      .divider {
+        margin: 0 !important
       }
 
       .section-title {
-        font-size: clamp(26px, 7vw, 36px);
-        margin-bottom: 24px
+        font-size: clamp(22px, 6vw, 30px) !important;
+        margin-bottom: 16px !important
       }
 
       .section-label {
-        font-size: 10px;
-        margin-bottom: 8px
+        font-size: 9px !important;
+        margin-bottom: 6px !important
       }
 
       .container {
@@ -1073,138 +1083,177 @@
 
       .ventures-grid {
         grid-template-columns: 1fr !important;
-        gap: 16px
+        gap: 12px !important
       }
 
       .venture-card {
-        padding: 16px
+        padding: 12px !important
       }
 
       .venture-img {
-        height: 180px
+        height: 160px !important
       }
 
       .venture-name {
-        font-size: 18px
+        font-size: 16px !important
+      }
+
+      .venture-type {
+        font-size: 11px !important
       }
 
       .venture-desc {
-        font-size: 14px
+        font-size: 13px !important;
+        line-height: 1.4 !important
+      }
+
+      .venture-tags {
+        gap: 4px !important
+      }
+
+      .vtag {
+        font-size: 10px !important;
+        padding: 3px 8px !important
       }
 
       .bball-inner,
       .ai-inner,
       .resume-wrap {
         grid-template-columns: 1fr !important;
-        gap: 28px
+        gap: 20px !important
       }
 
       .bball-facts {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr 1fr;
+        gap: 8px !important
       }
 
       .fact-box {
-        padding: 14px
+        padding: 10px !important
       }
 
       .fact-title {
-        font-size: 9px
+        font-size: 8px !important
       }
 
       .fact-val {
-        font-size: 14px
+        font-size: 13px !important
       }
 
       .clubs-list {
-        gap: 6px
+        gap: 4px !important
       }
 
       .club-row {
-        padding: 10px 12px;
-        font-size: 13px
+        padding: 8px 10px !important;
+        font-size: 12px !important
       }
 
       .contact-grid {
         grid-template-columns: 1fr 1fr !important;
-        gap: 12px
+        gap: 8px !important
       }
 
       .contact-card {
-        padding: 20px 14px
+        padding: 14px 10px !important
       }
 
       .contact-icon {
-        font-size: 28px;
-        margin-bottom: 8px
+        font-size: 24px !important;
+        margin-bottom: 6px !important
       }
 
       .contact-label {
-        font-size: 14px
+        font-size: 13px !important
       }
 
       .contact-val {
-        font-size: 11px
+        font-size: 10px !important
       }
 
       .ai-card {
-        padding: 20px
+        padding: 16px !important
       }
 
       .ai-feat-title {
-        font-size: 15px
+        font-size: 14px !important
       }
 
       .ai-feat-desc {
-        font-size: 13px
+        font-size: 12px !important
       }
 
       .exp-item {
-        padding-left: 18px
+        padding-left: 14px !important;
+        margin-bottom: 16px !important
       }
 
       .exp-title {
-        font-size: 16px
+        font-size: 15px !important
       }
 
       .exp-company {
-        font-size: 13px
+        font-size: 12px !important
       }
 
       .exp-points li {
-        font-size: 14px
+        font-size: 13px !important
       }
 
       .edu-box {
-        padding: 16px
+        padding: 12px !important
       }
 
       .edu-school {
-        font-size: 15px
+        font-size: 14px !important
+      }
+
+      .edu-deg {
+        font-size: 12px !important
+      }
+
+      .edu-loc {
+        font-size: 11px !important
       }
 
       .skill-row {
-        font-size: 14px
-      }
-
-      .hero-glow {
-        width: 400px;
-        height: 400px
+        font-size: 12px !important
       }
 
       .nav-social {
-        width: 30px !important;
-        height: 30px !important
+        width: 28px !important;
+        height: 28px !important
       }
 
       .nav-social svg {
-        width: 15px !important;
-        height: 15px !important
+        width: 14px !important;
+        height: 14px !important
+      }
+
+      .bio-card {
+        padding: 20px 16px !important
+      }
+
+      footer {
+        padding: 16px !important
+      }
+
+      .fade-up {
+        transform: translateY(15px) !important
       }
     }
 
     @media(max-width:380px) {
       .bball-facts {
         grid-template-columns: 1fr
+      }
+
+      #hero {
+        padding: 48px 12px 20px !important
+      }
+
+      section {
+        padding: 20px 12px !important
       }
     }
 
