@@ -7,6 +7,12 @@
   <title>Tiegbe Bamba — Entrepreneur · Coach · Builder</title>
   <meta name="description"
     content="Tiegbe Bamba — Pro Basketball Coach, Serial Entrepreneur, AI Builder. Strong Wave Service, Purgo Clean, Bvmbino AI Agent and more.">
+  <meta property="og:title" content="Tiegbe Bamba — Entrepreneur · Coach · Builder">
+  <meta property="og:description" content="Pro Basketball Coach, Serial Entrepreneur, AI Builder. Strong Wave Service, Purgo Clean, Entreprise AI and more.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tiegbe Bamba — Entrepreneur · Coach · Builder">
+  <meta name="twitter:description" content="Pro Basketball Coach, Serial Entrepreneur, AI Builder.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
@@ -26,6 +32,7 @@
       --text3: #8a8278;
       --font: 'Outfit', sans-serif;
       --mono: 'JetBrains Mono', monospace;
+      --accent: var(--gold);
       --r: 14px;
       --rsm: 8px;
     }
@@ -861,14 +868,105 @@
       margin: 0
     }
 
+    /* ── HAMBURGER MENU ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 110
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text1);
+      border-radius: 2px;
+      transition: all .3s
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px)
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px)
+    }
+
+    /* ── SOCIAL LINKS ── */
+    .social-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 16px
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(232, 169, 18, .08);
+      border: 1px solid var(--border);
+      transition: all .25s;
+      text-decoration: none
+    }
+
+    .social-link:hover {
+      background: rgba(232, 169, 18, .18);
+      border-color: var(--border2);
+      transform: translateY(-2px)
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold)
+    }
+
     /* ── MOBILE ── */
     @media(max-width:768px) {
       nav {
         padding: 14px 18px
       }
 
+      .hamburger {
+        display: flex
+      }
+
       .nav-links {
-        display: none
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(6, 8, 10, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        z-index: 105
+      }
+
+      .nav-links.open {
+        display: flex
+      }
+
+      .nav-links a {
+        font-size: 18px;
+        color: var(--text2)
       }
 
       .bball-inner,
@@ -941,13 +1039,24 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <!-- Translation Widget -->
-    <select class="nav-cta"
-      style="background:#0a0800; border:1px solid rgba(232,169,18,0.3); color:var(--gold); font-size:14px; padding:6px 12px; cursor:pointer;"
-      onchange="translatePage(this.value)">
-      <option value="en">🇺🇸 EN</option>
-      <option value="fr">🇫🇷 FR</option>
-    </select>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="https://www.linkedin.com/in/tiegbe-bamba?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="social-link" style="width:32px;height:32px" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/dans_le_turfuu?igsh=emRyOXcxMGw1eWNq&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link" style="width:32px;height:32px" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Translation Widget -->
+      <select class="nav-cta"
+        style="background:#0a0800; border:1px solid rgba(232,169,18,0.3); color:var(--gold); font-size:14px; padding:6px 12px; cursor:pointer;"
+        onchange="translatePage(this.value)">
+        <option value="en">🇺🇸 EN</option>
+        <option value="fr">🇫🇷 FR</option>
+      </select>
+      <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
   </nav>
 
@@ -1110,7 +1219,7 @@
           <p style="color:var(--text3);font-size:14px;line-height:1.8;margin-bottom:28px">Power Guard · 200cm · 98kg ·
             Ivory Coast National Team member with <strong style="color:var(--gold)">5 FIBA Events</strong> including the
             FIBA World Cup China 2019. Played in different countries and levels across Europe, USA, and Africa.
-            Experienced extreme adversity, suffering <strong style="color:var(--pu2)">two torn Achilles tendons</strong>
+            Experienced extreme adversity, suffering <strong style="color:var(--gold)">two torn Achilles tendons</strong>
             and demonstrating immense resilience to return and successfully play at the highest elite level again.</p>
           <div class="bball-facts">
             <div class="fact-box">
@@ -1342,7 +1451,7 @@
             <div class="exp-company">Professional Training (CPF / Qualiopi Target) · Île-de-France</div>
             <ul class="exp-points">
               <li>Created a professional training organization (Organisme de Formation) specializing in conflict
-                management, SST, and mindest.</li>
+                management, SST, and mindset.</li>
               <li>Designed and executed premium training modules for athletes, staff, and B2B corporate teams.</li>
               <li>Handled the legal structuring, DREETS declaration, and CPF/Qualiopi certification roadmap.</li>
             </ul>
@@ -1388,6 +1497,7 @@
 
         </div>
       </div>
+    </div>
   </section>
 
   <div class="divider"></div>
@@ -1483,6 +1593,14 @@
           d'Ivoire 🇨🇮 · USA 🇺🇸</div>
         <div style="font-size:12px;font-family:var(--mono);color:var(--text3)">French & Ivoirian · International
           Business · Bilingual EN/FR</div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/tiegbe-bamba?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dans_le_turfuu?igsh=emRyOXcxMGw1eWNq&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1524,12 +1642,14 @@
       skillObserver.observe(el);
     });
 
-    // Smooth scroll for nav links on mobile
+    // Smooth scroll for nav links + close mobile menu
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(a.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector('.nav-links').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('active');
       });
     });
 
@@ -1662,7 +1782,7 @@
       "Created structured basketball formation programs, Introduction to AI for Athletes courses": "Création de programmes structurés de basket et des formations IA pour athlètes",
       "Founder — FormationPro": "Fondateur — FormationPro",
       "Professional Training (CPF / Qualiopi Target) · Île-de-France": "Formation Professionnelle (Objectif CPF / Qualiopi) · Île-de-France",
-      "Created a professional training organization (Organisme de Formation) specializing in conflict management, SST, and mindest.": "Création d'un organisme de formation spécialisé en gestion de conflits, SST et préparation mentale.",
+      "Created a professional training organization (Organisme de Formation) specializing in conflict management, SST, and mindset.": "Création d'un organisme de formation spécialisé en gestion de conflits, SST et préparation mentale.",
       "Designed and executed premium training modules for athletes, staff, and B2B corporate teams.": "Conception et animation de modules prestigieux pour athlètes et équipes B2B.",
       "Handled the legal structuring, DREETS declaration, and CPF/Qualiopi certification roadmap.": "Structuration légale, déclaration DREETS et démarches de certification.",
       "Consultant Performance Opérationnelle": "Consultant Performance Opérationnelle",
