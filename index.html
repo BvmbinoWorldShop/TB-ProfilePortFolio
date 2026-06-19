@@ -680,14 +680,46 @@
 
     /* ── AI SECTION ── */
     #ai-agent {
-      background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 50%, var(--dark) 100%)
+      background: linear-gradient(180deg, var(--dark) 0%, #060a14 30%, #0a0e18 50%, #060a14 70%, var(--dark) 100%);
+      position: relative;
+      overflow: hidden
+    }
+
+    #ai-agent::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(232,169,18,.06), transparent),
+        radial-gradient(ellipse 500px 300px at 80% 70%, rgba(64,176,224,.04), transparent);
+      pointer-events: none
+    }
+
+    #ai-agent::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(rgba(232,169,18,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,169,18,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      opacity: .4
     }
 
     .ai-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
-      align-items: center
+      align-items: center;
+      position: relative;
+      z-index: 1
     }
 
     .ai-card {
@@ -1767,31 +1799,51 @@
     <div class="container">
       <div class="ai-inner">
         <div class="fade-up">
-          <div class="section-label">AI Solutions for Business</div>
+          <div class="section-label" style="letter-spacing:3px">THE FUTURE OF BUSINESS AI</div>
           <h2 class="section-title"><span>Entreprise AI</span></h2>
-          <p style="color:var(--text3);font-size:14px;line-height:1.8;margin-bottom:28px;max-width:500px;">A private multi-agent AI system with a base team of 24 agents across 10 key disciplines. Led by Billy, our orchestrator agent who manages tasks, delegates complex work to specialized agents that collaborate and deliver expert-level results. Available for businesses and solo entrepreneurs. 100% private, locally stored with persistent memory — the power of top LLMs like Claude, Gemini and others, at 10x less cost.</p>
+          <p style="color:var(--text2);font-size:15px;line-height:1.9;margin-bottom:12px;max-width:520px;">Imagine having a full team of AI experts working for you 24/7. Not one generic chatbot — <strong style="color:var(--gold)">24 specialized agents</strong> across <strong style="color:var(--gold)">10 key disciplines</strong>, all orchestrated by <strong style="color:#40b0e0">Billy</strong>, your lead AI manager.</p>
+          <p style="color:var(--text3);font-size:13.5px;line-height:1.8;margin-bottom:12px;max-width:520px;">Billy receives your request, breaks it down, delegates each piece to the right expert agent. They collaborate, cross-check each other's work, and deliver a unified expert-level result. Need more agents? Create them infinitely.</p>
+          <p style="color:var(--text3);font-size:13.5px;line-height:1.8;margin-bottom:28px;max-width:520px;">The best part? <strong style="color:var(--text1)">100% private</strong>. Stored locally on your infrastructure with persistent memory. Protected by <strong style="color:var(--gold)">7 layers of encryption</strong> — your data never leaves, never gets shared, never gets used to train other models. The power of Claude, Gemini, and top LLMs — at <strong style="color:var(--gold)">10x less cost</strong>. Available for enterprises and solo entrepreneurs.</p>
         </div>
         <div class="fade-up">
           <div class="ai-card" style="margin-top:16px">
             <div class="ai-feature">
-              <span class="ai-feat-icon">⚡</span>
+              <span class="ai-feat-icon" style="font-size:24px">🤖</span>
               <div>
-                <div class="ai-feat-title">24 Agents · 10 Disciplines</div>
-                <div class="ai-feat-desc">A base team of specialized agents that collaborate under Billy's orchestration — infinitely scalable to match any business need.</div>
+                <div class="ai-feat-title" style="color:var(--gold)">Billy — The Orchestrator</div>
+                <div class="ai-feat-desc">Your AI chief of staff. Billy manages all tasks, delegates to the right agents, coordinates collaboration, and delivers the final output. One command — the whole team moves.</div>
               </div>
             </div>
             <div class="ai-feature">
-              <span class="ai-feat-icon">🧠</span>
+              <span class="ai-feat-icon" style="font-size:24px">⚡</span>
               <div>
-                <div class="ai-feat-title">Private & Persistent Memory</div>
-                <div class="ai-feat-desc">100% local storage, no data leaves your infrastructure. Persistent memory means your agents learn and improve over time.</div>
+                <div class="ai-feat-title">10 Disciplines · 24 Agents</div>
+                <div class="ai-feat-desc" style="line-height:1.7">
+                  <span style="color:var(--text2)">Sales & Outreach</span> — Prospector, Closer, Follow-Up Agent<br>
+                  <span style="color:var(--text2)">Marketing</span> — Content Creator, Ad Strategist, Social Manager<br>
+                  <span style="color:var(--text2)">Finance</span> — Auditor, Invoice Agent, P&L Analyst<br>
+                  <span style="color:var(--text2)">Operations</span> — Workflow Planner, Task Manager<br>
+                  <span style="color:var(--text2)">Legal & Compliance</span> — Contract Reviewer, Policy Agent<br>
+                  <span style="color:var(--text2)">Strategy</span> — Market Analyst, Competitive Intel<br>
+                  <span style="color:var(--text2)">Customer Success</span> — Support Agent, Retention Specialist<br>
+                  <span style="color:var(--text2)">HR & Recruiting</span> — Talent Scout, Onboarding Agent<br>
+                  <span style="color:var(--text2)">Data & Analytics</span> — Data Miner, Report Builder<br>
+                  <span style="color:var(--text2)">Tech & Development</span> — Code Agent, Integration Specialist
+                </div>
               </div>
             </div>
             <div class="ai-feature">
-              <span class="ai-feat-icon">📱</span>
+              <span class="ai-feat-icon" style="font-size:24px">🔒</span>
+              <div>
+                <div class="ai-feat-title">7 Layers of Protection</div>
+                <div class="ai-feat-desc">End-to-end encryption, local-only storage, zero data sharing, air-gapped architecture, persistent memory vault, role-based access, and audit logging. Your data stays yours — period. Rare in an era where big LLMs train on your conversations.</div>
+              </div>
+            </div>
+            <div class="ai-feature">
+              <span class="ai-feat-icon" style="font-size:24px">💰</span>
               <div>
                 <div class="ai-feat-title">10x Less Cost</div>
-                <div class="ai-feat-desc">Enterprise-grade AI performance at a fraction of the price of major LLMs. Available for companies and solo entrepreneurs alike.</div>
+                <div class="ai-feat-desc">The same firepower as enterprise subscriptions to Claude, Gemini, GPT — at a fraction of the price. No per-seat licensing. Scale your agent team without scaling your bill.</div>
               </div>
             </div>
           </div>
@@ -1803,8 +1855,12 @@
   <div class="divider"></div>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
+  <section id="contact" style="position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:0">
+      <img src="images/sunset-portrait.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:.5" loading="lazy">
+      <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,.5) 40%,rgba(10,10,10,.7) 100%)"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1">
       <div class="fade-up">
         <div class="section-label">Get in Touch</div>
         <h2 class="section-title">Let's <span>Work Together</span></h2>
@@ -1828,8 +1884,8 @@
             <rect x="28" y="6" width="8" height="10" rx="2" fill="url(#ai1)" opacity=".7"/>
             <circle cx="32" cy="6" r="3" fill="#ffe080"/>
           </svg>
-          <div style="font-size:16px;font-weight:800;color:var(--text1);margin-bottom:4px">AI Agent</div>
-          <div style="font-size:11px;color:var(--text3);font-family:var(--mono)">Multi AI Agent System</div>
+          <div style="font-size:16px;font-weight:800;color:var(--text1);margin-bottom:4px">Entreprise AI</div>
+          <div style="font-size:11px;color:var(--text3);font-family:var(--mono)">Multi-Agent AI System</div>
         </div>
         <div style="background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:24px 16px;text-align:center;transition:transform .3s,border-color .3s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
           <svg width="56" height="56" viewBox="0 0 64 64" style="margin-bottom:12px;filter:drop-shadow(0 6px 18px rgba(232,169,18,.4))">
@@ -2148,19 +2204,51 @@
       "Built and managed a national hospitality client network — direct market operations": "Création et gestion d'un réseau client hôtelier national — opérations marché direct",
 
       // AI Spotlight & Contact
-      "AI Solutions for Business": "Solutions IA Business",
-      "A private multi-agent AI system with a base team of 24 agents across 10 key disciplines. Led by Billy, our orchestrator agent who manages tasks, delegates complex work to specialized agents that collaborate and deliver expert-level results. Available for businesses and solo entrepreneurs. 100% private, locally stored with persistent memory — the power of top LLMs like Claude, Gemini and others, at 10x less cost.": "Un système IA multi-agents privé avec une équipe de base de 24 agents répartis dans 10 disciplines clés. Dirigé par Billy, notre agent orchestrateur qui gère les tâches, délègue le travail complexe aux agents spécialisés qui collaborent et livrent des résultats de niveau expert. Disponible pour entreprises et auto-entrepreneurs. 100% privé, stocké localement avec mémoire persistante — la puissance des grands LLM comme Claude, Gemini et autres, à 10x moins cher.",
-      "24 Agents · 10 Disciplines": "24 Agents · 10 Disciplines",
-      "A base team of specialized agents that collaborate under Billy's orchestration — infinitely scalable to match any business need.": "Une équipe de base d'agents spécialisés qui collaborent sous l'orchestration de Billy — infiniment scalable pour répondre à tout besoin business.",
-      "Private & Persistent Memory": "Privé & Mémoire Persistante",
-      "100% local storage, no data leaves your infrastructure. Persistent memory means your agents learn and improve over time.": "100% stockage local, aucune donnée ne quitte votre infrastructure. La mémoire persistante permet à vos agents d'apprendre et de s'améliorer.",
+      "Imagine having a full team of AI experts working for you 24/7. Not one generic chatbot —": "Imaginez une équipe complète d'experts IA travaillant pour vous 24h/24. Pas un simple chatbot —",
+      "24 specialized agents": "24 agents spécialisés",
+      "10 key disciplines": "10 disciplines clés",
+      ", your lead AI manager.": ", votre directeur IA.",
+      ", all orchestrated by": ", tous orchestrés par",
+      "Billy receives your request, breaks it down, delegates each piece to the right expert agent. They collaborate, cross-check each other's work, and deliver a unified expert-level result. Need more agents? Create them infinitely.": "Billy reçoit votre demande, la décompose, délègue chaque partie à l'agent expert adéquat. Ils collaborent, vérifient mutuellement leur travail et livrent un résultat unifié de niveau expert. Besoin de plus d'agents ? Créez-en à l'infini.",
+      "The best part?": "Le meilleur ?",
+      "100% private": "100% privé",
+      ". Stored locally on your infrastructure with persistent memory. Protected by": ". Stocké localement sur votre infrastructure avec mémoire persistante. Protégé par",
+      "7 layers of encryption": "7 couches de chiffrement",
+      " — your data never leaves, never gets shared, never gets used to train other models. The power of Claude, Gemini, and top LLMs — at": " — vos données ne sortent jamais, ne sont jamais partagées, jamais utilisées pour entraîner d'autres modèles. La puissance de Claude, Gemini et des meilleurs LLM — à",
+      "10x less cost": "10x moins cher",
+      ". Available for enterprises and solo entrepreneurs.": ". Disponible pour entreprises et auto-entrepreneurs.",
+      "Billy — The Orchestrator": "Billy — L'Orchestrateur",
+      "Your AI chief of staff. Billy manages all tasks, delegates to the right agents, coordinates collaboration, and delivers the final output. One command — the whole team moves.": "Votre directeur IA. Billy gère toutes les tâches, délègue aux bons agents, coordonne la collaboration et livre le résultat final. Une commande — toute l'équipe s'active.",
+      "10 Disciplines · 24 Agents": "10 Disciplines · 24 Agents",
+      "Sales & Outreach": "Ventes & Prospection",
+      "Prospector, Closer, Follow-Up Agent": "Prospecteur, Closer, Agent de Suivi",
+      "Marketing": "Marketing",
+      "Content Creator, Ad Strategist, Social Manager": "Créateur de Contenu, Stratégiste Pub, Social Manager",
+      "Finance": "Finance",
+      "Auditor, Invoice Agent, P&L Analyst": "Auditeur, Agent Facturation, Analyste P&L",
+      "Operations": "Opérations",
+      "Workflow Planner, Task Manager": "Planificateur Workflow, Gestionnaire de Tâches",
+      "Legal & Compliance": "Juridique & Conformité",
+      "Contract Reviewer, Policy Agent": "Réviseur de Contrats, Agent Conformité",
+      "Strategy": "Stratégie",
+      "Market Analyst, Competitive Intel": "Analyste Marché, Veille Concurrentielle",
+      "Customer Success": "Succès Client",
+      "Support Agent, Retention Specialist": "Agent Support, Spécialiste Rétention",
+      "HR & Recruiting": "RH & Recrutement",
+      "Talent Scout, Onboarding Agent": "Chasseur de Talents, Agent Onboarding",
+      "Data & Analytics": "Data & Analytics",
+      "Data Miner, Report Builder": "Data Miner, Générateur de Rapports",
+      "Tech & Development": "Tech & Développement",
+      "Code Agent, Integration Specialist": "Agent Code, Spécialiste Intégration",
+      "7 Layers of Protection": "7 Couches de Protection",
+      "End-to-end encryption, local-only storage, zero data sharing, air-gapped architecture, persistent memory vault, role-based access, and audit logging. Your data stays yours — period. Rare in an era where big LLMs train on your conversations.": "Chiffrement de bout en bout, stockage local uniquement, zéro partage de données, architecture isolée, coffre-fort mémoire persistant, accès par rôles et journalisation d'audit. Vos données restent les vôtres — point. Rare à une époque où les grands LLM s'entraînent sur vos conversations.",
       "10x Less Cost": "10x Moins Cher",
-      "Enterprise-grade AI performance at a fraction of the price of major LLMs. Available for companies and solo entrepreneurs alike.": "Performance IA de niveau entreprise à une fraction du prix des grands LLM. Disponible pour entreprises et auto-entrepreneurs.",
+      "The same firepower as enterprise subscriptions to Claude, Gemini, GPT — at a fraction of the price. No per-seat licensing. Scale your agent team without scaling your bill.": "La même puissance de feu que les abonnements entreprise Claude, Gemini, GPT — à une fraction du prix. Pas de licence par siège. Faites grandir votre équipe d'agents sans faire exploser la facture.",
       "Get in Touch": "Contact",
       "Let's Work Together": "Travaillons Ensemble",
       "Open to consulting mandates, coaching partnerships, AI integration projects, and B2B business conversations.": "Ouvert aux mandats de consulting, partenariats de coaching, projets d'intégration IA et conversations B2B.",
-      "Multi AI Agent System": "Système Multi-Agents IA",
-      "AI Agent": "Agent IA",
+      "Multi-Agent AI System": "Système IA Multi-Agents",
+      "Entreprise AI": "Entreprise AI",
       "Consulting & Marketing": "Consulting & Marketing",
       "Basketball Coaching": "Coaching Basket",
       "B2B Cleaning · Île-de-France": "Nettoyage B2B · Île-de-France",
