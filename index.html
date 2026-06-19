@@ -889,6 +889,91 @@
       font-family: var(--mono)
     }
 
+    /* ── CLIENT CAROUSEL ── */
+    .client-carousel {
+      padding: 48px 0 32px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .client-carousel::before,
+    .client-carousel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none
+    }
+
+    .client-carousel::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--dark), transparent)
+    }
+
+    .client-carousel::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--dark), transparent)
+    }
+
+    .client-track {
+      display: flex;
+      gap: 40px;
+      animation: scrollClients 30s linear infinite;
+      width: max-content
+    }
+
+    .client-track:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes scrollClients {
+      0% { transform: translateX(0) }
+      100% { transform: translateX(-50%) }
+    }
+
+    .client-logo {
+      flex-shrink: 0;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .5;
+      transition: opacity .3s;
+      filter: grayscale(1) brightness(1.5)
+    }
+
+    .client-logo:hover {
+      opacity: 1;
+      filter: grayscale(0) brightness(1)
+    }
+
+    .client-logo img {
+      height: 36px;
+      max-width: 120px;
+      object-fit: contain
+    }
+
+    .client-logo-text {
+      flex-shrink: 0;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      opacity: .5;
+      transition: opacity .3s
+    }
+
+    .client-logo-text:hover {
+      opacity: 1
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(255, 255, 255, .05);
@@ -1355,7 +1440,7 @@
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-n">€1M+</div>
-          <div class="stat-l">Revenue Generated</div>
+          <div class="stat-l">Revenue Generated through Companies & Collaborations</div>
         </div>
         <div class="stat">
           <div class="stat-n">5</div>
@@ -1371,8 +1456,8 @@
         </div>
       </div>
       <div class="hero-btns">
-        <a href="#ventures" class="btn-primary">See My Work</a>
-        <a href="#resume" class="btn-secondary">View Resume</a>
+        <a href="https://www.linkedin.com/in/tiegbe-bamba" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Free Strategy Call</a>
+        <a href="#ventures" class="btn-secondary">See My Work</a>
       </div>
     </div>
     <div class="scroll-hint">scroll</div>
@@ -1564,15 +1649,9 @@
         <h2 class="section-title">Executive <span>Profile</span></h2>
         <div
           style="margin-top: 24px; padding: 24px; border-left: 3px solid var(--accent); background: rgba(201,168,76,0.03); border-radius: 0 12px 12px 0;">
-          <p style="color:var(--text1); font-size:16px; line-height:1.7; margin-bottom: 12px; font-weight: 500;">
-            Entrepreneur and business leader with 10+ years of experience founding and running operations across France, China, and Côte d’Ivoire — including P&L ownership, multi-site management, and revenue growth of over €1M.
-          </p>
-          <p style="color:var(--text2); font-size:15px; line-height:1.6; margin-bottom: 12px;">
-            5 businesses built from scratch. Bilingual FR/EN (Master’s, Portland State University). Deep network across government, sports federations, and the private sector in Côte d’Ivoire and France.
-          </p>
-          <p style="color:var(--text3); font-size:14px; line-height:1.6; font-style: italic;">
-            Former international basketball player (FIBA World Cup 2019) — bringing resilience, discipline, cross-cultural leadership, and a results-driven mindset directly applicable to business operations and team management.
-          </p>
+          <p style="color:var(--text1); font-size:16px; line-height:1.7; margin-bottom: 12px; font-weight: 500;">Entrepreneur and business leader with 10+ years of experience founding and running operations across France, China, and Côte d’Ivoire — including P&L ownership, multi-site management, and revenue growth of over €1M through companies and collaborations.</p>
+          <p style="color:var(--text2); font-size:15px; line-height:1.6; margin-bottom: 12px;">5 businesses built from scratch. Bilingual FR/EN (Master’s, Portland State University). Deep network across government, sports federations, and the private sector in Côte d’Ivoire and France.</p>
+          <p style="color:var(--text3); font-size:14px; line-height:1.6; font-style: italic;">Former international basketball player (FIBA World Cup 2019) — bringing resilience, discipline, cross-cultural leadership, and a results-driven mindset directly applicable to business operations and team management.</p>
         </div>
       </div>
 
@@ -1976,6 +2055,33 @@
     </div>
   </section>
 
+  <!-- CLIENT CAROUSEL -->
+  <div class="client-carousel">
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:2px;text-transform:uppercase">Trusted By</div>
+    </div>
+    <div class="client-track">
+      <div class="client-logo-text" style="color:#34d186;background:rgba(52,209,134,.08)">Bolt</div>
+      <div class="client-logo-text" style="color:#ff6b35;background:rgba(255,107,53,.08)">Quitoque</div>
+      <div class="client-logo-text" style="color:#e91e63;background:rgba(233,30,99,.08)">Veepee</div>
+      <div class="client-logo-text" style="color:#2196f3;background:rgba(33,150,243,.08)">AX Logistics</div>
+      <div class="client-logo-text" style="color:#ff9800;background:rgba(255,152,0,.08)">Magals Construction</div>
+      <div class="client-logo-text" style="color:#7c4dff;background:rgba(124,77,255,.08)">Ankorstore</div>
+      <div class="client-logo-text" style="color:#4caf50;background:rgba(76,175,80,.08)">Ville de Sarcelles</div>
+      <div class="client-logo-text" style="color:var(--gold);background:rgba(232,169,18,.08)">Auto-Entrepreneurs</div>
+      <div class="client-logo-text" style="color:#e0e0e0;background:rgba(255,255,255,.05)">Particuliers</div>
+      <div class="client-logo-text" style="color:#34d186;background:rgba(52,209,134,.08)">Bolt</div>
+      <div class="client-logo-text" style="color:#ff6b35;background:rgba(255,107,53,.08)">Quitoque</div>
+      <div class="client-logo-text" style="color:#e91e63;background:rgba(233,30,99,.08)">Veepee</div>
+      <div class="client-logo-text" style="color:#2196f3;background:rgba(33,150,243,.08)">AX Logistics</div>
+      <div class="client-logo-text" style="color:#ff9800;background:rgba(255,152,0,.08)">Magals Construction</div>
+      <div class="client-logo-text" style="color:#7c4dff;background:rgba(124,77,255,.08)">Ankorstore</div>
+      <div class="client-logo-text" style="color:#4caf50;background:rgba(76,175,80,.08)">Ville de Sarcelles</div>
+      <div class="client-logo-text" style="color:var(--gold);background:rgba(232,169,18,.08)">Auto-Entrepreneurs</div>
+      <div class="client-logo-text" style="color:#e0e0e0;background:rgba(255,255,255,.05)">Particuliers</div>
+    </div>
+  </div>
+
   <footer>
     Built by <strong>Bvmbino AI Agent</strong> · AI Builder · &copy; 2026
   </footer>
@@ -2037,8 +2143,8 @@
       "Years Bball": "Années Basket",
       "Power Guard": "Poste 3-4",
       "FIBA Events": "Événements FIBA",
+      "Book a Free Strategy Call": "Réservez un Appel Stratégique Gratuit",
       "See My Work": "Voir mes Projets",
-      "View Resume": "Voir mon CV",
       "What I Build": "Mes Créations",
       "Active Ventures": "Projets Actifs",
       "Strong Wave Service": "Strong Wave Service",
@@ -2116,12 +2222,12 @@
       "Background": "Mon Parcours",
       "Executive Profile": "Profil Exécutif",
       // Profile summary
-      "Entrepreneur and business leader with 10+ years of experience founding and running operations across France, China, and Côte d'Ivoire — including P&L ownership, multi-site management, and revenue growth of over €1M.": "Entrepreneur et dirigeant avec plus de 10 ans d'expérience dans la création et la gestion d'opérations en France, Chine et Côte d'Ivoire — incluant le P&L, la gestion multi-sites et une croissance de CA de plus d'1M€.",
+      "Entrepreneur and business leader with 10+ years of experience founding and running operations across France, China, and Côte d'Ivoire — including P&L ownership, multi-site management, and revenue growth of over €1M through companies and collaborations.": "Entrepreneur et dirigeant avec plus de 10 ans d'expérience dans la création et la gestion d'opérations en France, Chine et Côte d'Ivoire — incluant le P&L, la gestion multi-sites et une croissance de CA de plus d'1M€ via entreprises et collaborations.",
       "5 businesses built from scratch. Bilingual FR/EN (Master's, Portland State University). Deep network across government, sports federations, and the private sector in Côte d'Ivoire and France.": "5 entreprises créées de zéro. Bilingue FR/EN (Master, Portland State University). Réseau profond dans les gouvernements, fédérations sportives et le secteur privé en Côte d'Ivoire et en France.",
       "Former international basketball player (FIBA World Cup 2019) — bringing resilience, discipline, cross-cultural leadership, and a results-driven mindset directly applicable to business operations and team management.": "Ancien basketteur international (Coupe du Monde FIBA 2019) — résilience, discipline, leadership interculturel et mentalité orientée résultats, directement applicables aux opérations business et au management d'équipe.",
       // Hero stats
       "€1M+": "1M€+",
-      "Revenue Generated": "CA Généré",
+      "Revenue Generated through Companies & Collaborations": "CA Généré via Entreprises & Collaborations",
       "Businesses Built": "Entreprises Créées",
       "Years Pro Athlete": "Années Pro Athlète",
       "Countries Operated": "Pays d'Activité",
@@ -2258,6 +2364,10 @@
       "Entrepreneur · Pro Basketball Trainer · AI Builder": "Entrepreneur · Basket Trainer Pro · Builder IA",
       "France 🇫🇷 · Côte d'Ivoire 🇨🇮 · USA 🇺🇸": "France 🇫🇷 · Côte d'Ivoire 🇨🇮 · USA 🇺🇸",
       "French & Ivoirian · International Business · Bilingual EN/FR": "Français & Ivoirien · Business International · Bilingue FR/EN",
+      // Client Carousel
+      "Trusted By": "Ils Nous Font Confiance",
+      "Auto-Entrepreneurs": "Auto-Entrepreneurs",
+      "Particuliers": "Particuliers",
       // Footer
       "Built by": "Propulsé par",
       "Bvmbino AI Agent": "Bvmbino AI Agent",
