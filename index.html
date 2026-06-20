@@ -717,7 +717,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
-      align-items: center;
+      align-items: start;
       position: relative;
       z-index: 1
     }
@@ -1232,7 +1232,6 @@
       }
 
       .career-countries {
-        grid-template-columns: 1fr 1fr !important;
         gap: 8px !important
       }
 
@@ -1775,9 +1774,12 @@
           <p style="color:var(--text2);font-size:18px;line-height:1.9;margin-bottom:14px;max-width:600px;">Imagine having a full team of AI experts working for you 24/7. Not one generic chatbot — <strong style="color:var(--gold)">24 specialized agents</strong> across <strong style="color:var(--gold)">10 key disciplines</strong>, all orchestrated by <strong style="color:#40b0e0">Billy</strong>, your lead AI manager.</p>
           <p style="color:var(--text3);font-size:16px;line-height:1.8;margin-bottom:14px;max-width:600px;">Billy receives your request, breaks it down, delegates each piece to the right expert agent. They collaborate, cross-check each other's work, and deliver a unified expert-level result. Need more agents? Create them infinitely.</p>
           <p style="color:var(--text3);font-size:16px;line-height:1.8;margin-bottom:28px;max-width:600px;">The best part? <strong style="color:var(--text1)">100% private</strong>. Stored locally on your infrastructure with persistent memory. Protected by <strong style="color:var(--gold)">7 layers of encryption</strong> — your data never leaves, never gets shared, never gets used to train other models. The power of Claude, Gemini, and top LLMs — at <strong style="color:var(--gold)">10x less cost</strong>. Available for enterprises and solo entrepreneurs.</p>
+          <div style="margin-top:8px;text-align:left">
+            <a href="https://www.linkedin.com/in/tiegbe-bamba" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:16px 36px;background:var(--gold);color:#000;font-size:18px;font-weight:800;border-radius:30px;text-decoration:none;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,169,18,.4)" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 28px rgba(232,169,18,.6)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(232,169,18,.4)'">Need a quote for your project? →</a>
+          </div>
         </div>
         <div class="fade-up">
-          <div class="ai-card" style="margin-top:16px">
+          <div class="ai-card" style="margin-top:80px">
             <div class="ai-feature">
               <span class="ai-feat-icon" style="font-size:28px">🤖</span>
               <div>
@@ -1817,9 +1819,6 @@
                 <div class="ai-feat-desc">The same firepower as enterprise subscriptions to Claude, Gemini, GPT — at a fraction of the price. No per-seat licensing. Scale your agent team without scaling your bill.</div>
               </div>
             </div>
-          </div>
-          <div style="margin-top:24px;text-align:left">
-            <a href="https://www.linkedin.com/in/tiegbe-bamba" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:16px 36px;background:var(--gold);color:#000;font-size:18px;font-weight:800;border-radius:30px;text-decoration:none;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,169,18,.4)" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 28px rgba(232,169,18,.6)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(232,169,18,.4)'">Need a quote for your project? →</a>
           </div>
         </div>
       </div>
@@ -1870,71 +1869,83 @@
           </div>
           <div class="fade-up">
             <div style="margin-bottom:16px;font-size:15px;font-family:var(--mono);color:var(--text3);letter-spacing:1px;text-transform:uppercase">Career Clubs</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="career-countries">
+            <div style="display:flex;flex-direction:column;gap:10px" class="career-countries">
               <!-- France -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇫🇷</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">France</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  Rouen Métropole — <span style="color:var(--gold)">NM1 Champion</span> (2022-24)<br>
-                  Kaysersberg — NM1 (2021-22)<br>
-                  Aix Maurienne — PRO B (2019-20)<br>
-                  Chartres Métropole — PRO B<br>
-                  STB Le Havre — PRO B<br>
-                  CSP Limoges — JEEP ELITE (U21)<br>
-                  CCRB Châlons-Reims — JEEP ELITE
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇫🇷</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">France</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)">Rouen Métropole · <span style="color:var(--gold)">NM1 Champion</span> · 2022-24</div>
+                    <div style="font-size:14px;color:var(--text2)">Kaysersberg · NM1 · 2021-22</div>
+                    <div style="font-size:14px;color:var(--text2)">Aix Maurienne · PRO B · 2019-20</div>
+                    <div style="font-size:14px;color:var(--text2)">Chartres Métropole · PRO B</div>
+                    <div style="font-size:14px;color:var(--text2)">STB Le Havre · PRO B</div>
+                    <div style="font-size:14px;color:var(--text2)">CSP Limoges · JEEP ELITE (U21)</div>
+                    <div style="font-size:14px;color:var(--text2)">CCRB Châlons-Reims · JEEP ELITE</div>
+                  </div>
                 </div>
               </div>
               <!-- USA -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇺🇸</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">USA</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  Portland State University — <span style="color:var(--gold)">NCAA Division 1</span><br>
-                  Snow College — Utah<br>
-                  Midland College — Texas
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇺🇸</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">USA</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)">Portland State University · <span style="color:var(--gold)">NCAA Division 1</span></div>
+                    <div style="font-size:14px;color:var(--text2)">Snow College · Utah</div>
+                    <div style="font-size:14px;color:var(--text2)">Midland College · Texas</div>
+                  </div>
                 </div>
               </div>
               <!-- Côte d'Ivoire -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇨🇮</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Côte d'Ivoire</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  <span style="color:var(--gold)">National Team</span><br>
-                  AfroBasket · FIBA World Cup
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇨🇮</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Côte d'Ivoire</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)"><span style="color:var(--gold)">National Team</span> · AfroBasket · FIBA World Cup</div>
+                  </div>
                 </div>
               </div>
               <!-- China -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇨🇳</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">China</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  <span style="color:var(--gold)">FIBA World Cup 2019</span><br>
-                  with Ivory Coast National Team
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇨🇳</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">China</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)"><span style="color:var(--gold)">FIBA World Cup 2019</span> · with Ivory Coast National Team</div>
+                  </div>
                 </div>
               </div>
               <!-- Greece -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇬🇷</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Greece</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  Psyhiko Athens — A2 Division
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇬🇷</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Greece</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)">Psyhiko Athens · A2 Division</div>
+                  </div>
                 </div>
               </div>
               <!-- Romania -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇷🇴</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Romania</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  Timba Timisoara — 1st Division
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇷🇴</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Romania</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)">Timba Timisoara · 1st Division</div>
+                  </div>
                 </div>
               </div>
               <!-- Iceland -->
-              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px">
-                <div style="font-size:34px;margin-bottom:6px">🇮🇸</div>
-                <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Iceland</div>
-                <div style="font-size:14px;color:var(--text2);line-height:1.8">
-                  Grindavik — 1st Division
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:16px">
+                <div style="font-size:32px;flex-shrink:0;line-height:1">🇮🇸</div>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:800;color:var(--text1);margin-bottom:8px">Iceland</div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:14px;color:var(--text2)">Grindavik · 1st Division</div>
+                  </div>
                 </div>
               </div>
             </div>
