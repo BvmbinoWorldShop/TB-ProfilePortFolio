@@ -1077,6 +1077,10 @@
         display: block
       }
 
+      #pageContent {
+        transition: filter .3s ease, -webkit-filter .3s ease
+      }
+
       body.sidebar-open #pageContent {
         filter: blur(6px);
         -webkit-filter: blur(6px);
@@ -2220,10 +2224,15 @@
         e.preventDefault();
         const href = a.getAttribute('href');
         const target = document.querySelector(href);
-        closeSidebar();
-        setTimeout(() => {
+        const sidebarWasOpen = document.body.classList.contains('sidebar-open');
+        if (sidebarWasOpen) {
+          closeSidebar();
+          setTimeout(() => {
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 350);
+        } else {
           if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
+        }
       });
     });
 
