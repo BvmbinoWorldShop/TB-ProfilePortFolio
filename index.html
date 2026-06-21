@@ -1041,35 +1041,60 @@
       }
 
       .nav-links {
-        display: none !important;
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
         bottom: 0;
+        width: 260px;
         background: rgba(6, 8, 10, .98);
         backdrop-filter: blur(20px);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
         z-index: 105;
-        padding: 0;
-        margin: 0
-      }
-
-      .nav-links.open {
+        padding: 80px 0 0;
+        margin: 0;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+        border-right: 1px solid var(--border);
         display: flex !important
       }
 
+      .nav-links.open {
+        transform: translateX(0)
+      }
+
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 104
+      }
+
+      .sidebar-overlay.active {
+        display: block
+      }
+
       .nav-links li {
-        list-style: none
+        list-style: none;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,.04)
       }
 
       .nav-links a {
-        font-size: 22px;
-        color: var(--text1);
-        font-weight: 600
+        font-size: 15px;
+        color: var(--text2);
+        font-weight: 600;
+        display: block;
+        padding: 18px 28px;
+        transition: background .2s, color .2s
+      }
+
+      .nav-links a:hover {
+        background: rgba(232,169,18,.06);
+        color: var(--gold)
       }
 
       #hero {
@@ -1363,12 +1388,14 @@
 <body>
 
   <!-- NAV -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
   <nav>
     <div class="nav-logo">Bvmbino<span>.dev</span></div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="sidebarNav">
       <li><a href="#ventures">Ventures</a></li>
+      <li><a href="#resume">Executive Resume</a></li>
+      <li><a href="#ai-agent">Entreprise AI</a></li>
       <li><a href="#basketball">Basketball</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px">
@@ -1387,7 +1414,7 @@
         <option value="fr">🇫🇷 FR</option>
         <option value="en">🇺🇸 EN</option>
       </select>
-      <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1495,7 +1522,7 @@
         </div>
 
         <div class="venture-card fade-up">
-          <img src="images/strong-wave.jpg" alt="Strong Wave Service — Conseils & Services" class="venture-img" style="object-fit:contain;background:#fff;padding:16px" loading="lazy">
+          <img src="images/strong-wave-logo.jpeg" alt="Strong Wave Service — Conseils & Services" class="venture-img" style="object-fit:cover" loading="lazy">
           <div class="venture-name">Strong Wave Service</div>
           <div class="venture-type">Consulting · Marketing · Strategy</div>
           <div class="venture-desc">21 companies supported in France and internationally. Full-service communication, marketing strategy, and B2B/B2C business consulting — from brand identity to paid ad deployment and client acquisition systems.</div>
@@ -1955,10 +1982,11 @@
                 </div>
               </div>
             </div>
-            <a href="https://youtube.com/@bvmbinooball?si=JyZqo-Ce2sC5OAFm" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 20px;background:rgba(255,0,0,.08);border:1px solid rgba(255,0,0,.15);border-radius:10px;text-decoration:none;transition:all .25s" onmouseover="this.style.background='rgba(255,0,0,.15)';this.style.borderColor='rgba(255,0,0,.3)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,0,0,.08)';this.style.borderColor='rgba(255,0,0,.15)';this.style.transform='none'">
-              <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#ff0000;flex-shrink:0"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <span style="font-size:13px;font-weight:700;color:var(--text1);font-family:var(--mono)">@bvmbinooball</span>
-            </a>
+            <div style="display:flex;justify-content:flex-end;margin-top:16px">
+              <a href="https://youtube.com/@bvmbinooball?si=JyZqo-Ce2sC5OAFm" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);text-decoration:none;transition:all .25s" onmouseover="this.style.background='rgba(255,0,0,.12)';this.style.borderColor='rgba(255,0,0,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='none'">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#ff0000"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -2154,14 +2182,25 @@
       skillObserver.observe(el);
     });
 
-    // Smooth scroll for nav links + close mobile menu
+    // Sidebar toggle
+    function toggleSidebar() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.getElementById('sidebarNav').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+    function closeSidebar() {
+      document.querySelector('.hamburger').classList.remove('active');
+      document.getElementById('sidebarNav').classList.remove('open');
+      document.getElementById('sidebarOverlay').classList.remove('active');
+    }
+
+    // Smooth scroll for nav links + close sidebar
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(a.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        document.querySelector('.nav-links').classList.remove('open');
-        document.querySelector('.hamburger').classList.remove('active');
+        closeSidebar();
       });
     });
 
@@ -2197,6 +2236,8 @@
       "Entrepreneur · Pro Basketball Trainer · AI Builder": "Entrepreneur · Basket Trainer Pro · Builder IA",
       "Building systems, coaching champions, and shipping products from Île-de-France to the world.": "Conception de systèmes, coaching de champions et développement de produits depuis l'Île-de-France.",
       "Ventures": "Projets",
+      "Executive Resume": "CV Exécutif",
+      "Entreprise AI": "Entreprise AI",
       "Basketball": "Basket",
       "Resume": "CV",
       "Contact": "Contact",
