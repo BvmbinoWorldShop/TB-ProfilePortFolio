@@ -79,7 +79,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 106;
       padding: 16px 32px;
       display: flex;
       align-items: center;
@@ -1404,11 +1404,11 @@
   <nav>
     <div class="nav-logo">Bvmbino<span>.dev</span></div>
     <ul class="nav-links" id="sidebarNav">
-      <li><a href="#ventures" onclick="goTo('#ventures')">Ventures</a></li>
-      <li><a href="#resume" onclick="goTo('#resume')">Executive Resume</a></li>
-      <li><a href="#ai-agent" onclick="goTo('#ai-agent')">Entreprise AI</a></li>
-      <li><a href="#basketball" onclick="goTo('#basketball')">Basketball</a></li>
-      <li><a href="#contact" onclick="goTo('#contact')">Contact</a></li>
+      <li><a href="#ventures" onclick="return goTo(event,'#ventures')">Ventures</a></li>
+      <li><a href="#resume" onclick="return goTo(event,'#resume')">Executive Resume</a></li>
+      <li><a href="#ai-agent" onclick="return goTo(event,'#ai-agent')">Entreprise AI</a></li>
+      <li><a href="#basketball" onclick="return goTo(event,'#basketball')">Basketball</a></li>
+      <li><a href="#contact" onclick="return goTo(event,'#contact')">Contact</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px">
       <a href="https://www.linkedin.com/in/tiegbe-bamba?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="social-link nav-social" style="width:32px;height:32px" aria-label="LinkedIn">
@@ -2217,13 +2217,14 @@
       document.getElementById('sidebarOverlay').classList.remove('active');
       document.body.classList.remove('sidebar-open');
     };
-    window.goTo = function(id) {
-      event.preventDefault();
+    window.goTo = function(e, id) {
+      if (e && e.preventDefault) e.preventDefault();
       closeSidebar();
       var el = document.querySelector(id);
       if (el) {
-        setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
+        setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); }, 350);
       }
+      return false;
     };
 
     // Infinite carousel — duplicate items for seamless loop + touch swipe
