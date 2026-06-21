@@ -1069,14 +1069,18 @@
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,.6);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+        background: rgba(0,0,0,.4);
         z-index: 104
       }
 
       .sidebar-overlay.active {
         display: block
+      }
+
+      body.sidebar-open #pageContent {
+        filter: blur(6px);
+        -webkit-filter: blur(6px);
+        pointer-events: none
       }
 
       .nav-links li {
@@ -1424,6 +1428,8 @@
     </div>
 
   </nav>
+
+  <main id="pageContent">
 
   <!-- HERO -->
   <section id="hero">
@@ -2159,6 +2165,8 @@
     Built by <strong>Bvmbino AI Agent</strong> · AI Builder · &copy; 2026
   </footer>
 
+  </main>
+
   <script>
     // Scroll animation observer
     const observer = new IntersectionObserver((entries) => {
@@ -2197,11 +2205,13 @@
       document.querySelector('.hamburger').classList.toggle('active');
       document.getElementById('sidebarNav').classList.toggle('open');
       document.getElementById('sidebarOverlay').classList.toggle('active');
+      document.body.classList.toggle('sidebar-open');
     };
     window.closeSidebar = function() {
       document.querySelector('.hamburger').classList.remove('active');
       document.getElementById('sidebarNav').classList.remove('open');
       document.getElementById('sidebarOverlay').classList.remove('active');
+      document.body.classList.remove('sidebar-open');
     };
 
     // Smooth scroll for all anchor links + close sidebar
