@@ -428,7 +428,40 @@
       font-size: 19px;
       font-weight: 700;
       margin-bottom: 6px;
-      color: var(--text1)
+      color: var(--text1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .status-dot.active {
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34, 197, 94, .6);
+      animation: blink-green 2s infinite
+    }
+
+    .status-dot.inactive {
+      background: #ef4444;
+      box-shadow: 0 0 6px rgba(239, 68, 68, .5);
+      animation: blink-red 2.5s infinite
+    }
+
+    @keyframes blink-green {
+      0%, 100% { opacity: 1 }
+      50% { opacity: .3 }
+    }
+
+    @keyframes blink-red {
+      0%, 100% { opacity: 1 }
+      50% { opacity: .3 }
     }
 
     .venture-type {
@@ -438,6 +471,39 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 12px
+    }
+
+    .venture-img-placeholder {
+      width: 100%;
+      height: 170px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1408 40%, #2a1f0a 60%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .venture-img-placeholder::before {
+      content: '</>';
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(232, 169, 18, .15);
+      letter-spacing: 4px
+    }
+
+    .venture-img-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(232, 169, 18, .03) 20px, rgba(232, 169, 18, .03) 21px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(232, 169, 18, .03) 20px, rgba(232, 169, 18, .03) 21px);
+      pointer-events: none
     }
 
     .venture-desc {
@@ -1488,12 +1554,13 @@
       <div class="fade-up">
         <div class="section-label">What I Build</div>
         <h2 class="section-title">Active <span>Ventures</span></h2>
+        <p style="font-size:13px;font-family:var(--mono);color:var(--text3);margin-top:8px;letter-spacing:1px">Strong Wave Service</p>
       </div>
       <div class="ventures-grid">
 
         <div class="venture-card fade-up">
-          <img src="images/formationpro.jpeg" alt="FormationPro — Professional Training & Coaching" class="venture-img" loading="lazy">
-          <div class="venture-name" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">FormationPro / Akamee <a href="https://www.akamee.fr/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:3px;background:var(--gold);color:#000;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">akamee.fr ↗</a></div>
+          <img src="images/formationpro.jpeg" alt="FormationPro — Professional Training & Coaching" class="venture-img" loading="lazy" onerror="this.style.display='none';var p=document.createElement('div');p.className='venture-img-placeholder';this.parentNode.insertBefore(p,this.nextSibling)">
+          <div class="venture-name"><span class="status-dot active"></span>Akamee / FormationPro <a href="https://www.akamee.fr/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:3px;background:var(--gold);color:#000;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">akamee.fr ↗</a></div>
           <div class="venture-type">Formation CPF · IDF</div>
           <div class="venture-desc">Professional training center in Île-de-France (Qualiopi, CPF eligible). 50+ learners certified annually in dermocosmetics. 3 corporate clients for conflict management and workplace stress. 2 amateur sports teams coached through our Elite 360° sport program.</div>
           <div class="venture-tags">
@@ -1506,7 +1573,7 @@
 
         <div class="venture-card fade-up">
           <img src="images/entreprise-ai.png" alt="Entreprise AI — Multi-Agent Private System" class="venture-img" style="object-fit:contain;background:#080c14" loading="lazy">
-          <div class="venture-name">Entreprise AI</div>
+          <div class="venture-name"><span class="status-dot active"></span>Entreprise AI</div>
           <div class="venture-type">Multi-Agent AI System · Private & Local</div>
           <div class="venture-desc">Private multi-agent AI system deployed in 5 companies and 11 individuals/auto-entrepreneurs. 75% time savings on complex and repetitive tasks with rapid ROI. Low maintenance, infinitely modular. 24 agents across 10 disciplines, orchestrated by Billy. 100% private, locally stored with persistent memory — at 10x less cost.</div>
           <div class="venture-tags">
@@ -1518,8 +1585,8 @@
         </div>
 
         <div class="venture-card fade-up">
-          <img src="images/purgo-clean.webp" alt="Purgo Clean Services team at work" class="venture-img" loading="lazy">
-          <div class="venture-name">Purgo Clean</div>
+          <img src="images/purgo-clean.webp" alt="Purgo Clean Services team at work" class="venture-img" loading="lazy" onerror="this.style.display='none';var p=document.createElement('div');p.className='venture-img-placeholder';this.parentNode.insertBefore(p,this.nextSibling)">
+          <div class="venture-name"><span class="status-dot active"></span>Purgo Clean</div>
           <div class="venture-type">B2B Commercial Cleaning · Île-de-France</div>
           <div class="venture-desc">100,000m²+ cleaned. 73 apartments completed across Île-de-France. 2 film/series set cleanings. 7 wedding venues serviced. Professional commercial cleaning company built from scratch with full sales, ops, and team infrastructure.</div>
           <div class="venture-tags">
@@ -1531,7 +1598,7 @@
 
         <div class="venture-card fade-up">
           <img src="images/basketball-trainer.jpeg" alt="Tiegbe Bamba — Pro Basketball Player at Reims" class="venture-img" style="object-fit:contain;object-position:center;background:#0a0a0a" loading="lazy">
-          <div class="venture-name">Pro Basketball Trainer, Mental Coach</div>
+          <div class="venture-name"><span class="status-dot active"></span>Pro Basketball Trainer, Mental Coach</div>
           <div class="venture-type">Personal Coaching · Camps · Bootcamps</div>
           <div class="venture-desc">Basketball camps every school holiday across France. Personal and mental coaching for 100+ amateur and pro players. Built on 15+ years of elite sports resilience and performance mindset.</div>
           <div class="venture-tags">
@@ -1544,7 +1611,7 @@
 
         <div class="venture-card fade-up">
           <img src="images/strong-wave-logo.jpeg" alt="Strong Wave Service — Conseils & Services" class="venture-img" style="object-fit:cover" loading="lazy">
-          <div class="venture-name">Strong Wave Service</div>
+          <div class="venture-name"><span class="status-dot active"></span>Strong Wave Service</div>
           <div class="venture-type">Consulting · Marketing · Strategy</div>
           <div class="venture-desc">21 companies supported in France and internationally. Full-service communication, marketing strategy, and B2B/B2C business consulting — from brand identity to paid ad deployment and client acquisition systems.</div>
           <div class="venture-tags">
@@ -1556,8 +1623,8 @@
         </div>
 
         <div class="venture-card fade-up">
-          <img src="images/bonkeur.jpeg" alt="Association Bonkeur — Youth organization in Sarcelles" class="venture-img" loading="lazy">
-          <div class="venture-name">Association Bonkeur</div>
+          <img src="images/bonkeur.jpeg" alt="Association Bonkeur — Youth organization in Sarcelles" class="venture-img" loading="lazy" onerror="this.style.display='none';var p=document.createElement('div');p.className='venture-img-placeholder';this.parentNode.insertBefore(p,this.nextSibling)">
+          <div class="venture-name"><span class="status-dot active"></span>Association Bonkeur</div>
           <div class="venture-type">Nonprofit · Social Impact</div>
           <div class="venture-desc">Clothing, toys, and shoes collection drives for those in need. Sports events organized for the community. English classes available. Community-driven initiatives built on values of dignity, inclusion, and collective strength.</div>
           <div class="venture-tags">
@@ -1568,8 +1635,8 @@
         </div>
 
         <div class="venture-card fade-up">
-          <img src="images/keo-jus.png" alt="Keo Jus — Natural Juice Distribution Côte d'Ivoire" class="venture-img" loading="lazy">
-          <div class="venture-name">Keo Jus</div>
+          <img src="images/keo-jus.png" alt="Keo Jus — Natural Juice Distribution Côte d'Ivoire" class="venture-img" loading="lazy" onerror="this.style.display='none';var p=document.createElement('div');p.className='venture-img-placeholder';this.parentNode.insertBefore(p,this.nextSibling)">
+          <div class="venture-name"><span class="status-dot inactive"></span>Keo Jus</div>
           <div class="venture-type">Distribution · Côte d'Ivoire</div>
           <div class="venture-desc">Natural juice distribution business supplying premium Accor Hotels in Côte d'Ivoire.
             First venture bridging French entrepreneurship with African market operations.</div>
@@ -1592,6 +1659,7 @@
       <div class="fade-up">
         <div class="section-label">Background</div>
         <h2 class="section-title">Executive <span>Profile</span></h2>
+        <p style="font-size:13px;font-family:var(--mono);color:var(--text3);margin-top:8px;letter-spacing:1px">Strong Wave Service</p>
         <div
           style="margin-top: 24px; padding: 24px; border-left: 3px solid var(--accent); background: rgba(201,168,76,0.03); border-radius: 0 12px 12px 0;">
           <p style="color:var(--text1); font-size:14px; line-height:1.7; margin-bottom: 12px; font-weight: 500;">Entrepreneur and business leader with 10+ years of experience founding and running operations across France, China, and Côte d’Ivoire — including P&L ownership, multi-site management, and revenue growth of over €1M through companies and collaborations.</p>
@@ -1693,7 +1761,7 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <span class="exp-title">Founder — FormationPro / Akamee</span>
+              <span class="exp-title">Founder — Akamee / FormationPro</span>
               <span class="exp-date">2026 — Present</span>
             </div>
             <div class="exp-company" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">Professional Training (CPF / Qualiopi) · Île-de-France <a href="https://www.akamee.fr/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;background:var(--gold);color:#000;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:opacity .2s" onmouseover="this.style.opacity=’0.85’" onmouseout="this.style.opacity=’1’">akamee.fr ↗</a></div>
@@ -1828,6 +1896,7 @@
         <div class="fade-up">
           <div class="section-label" style="letter-spacing:3px">THE FUTURE OF BUSINESS AI</div>
           <h2 class="section-title"><span>Entreprise AI</span></h2>
+          <p style="font-size:13px;font-family:var(--mono);color:var(--text3);margin-top:8px;letter-spacing:1px">Strong Wave Service</p>
           <p style="color:var(--text2);font-size:15px;line-height:1.9;margin-bottom:14px;max-width:600px;">Imagine having a full team of AI experts working for you 24/7. Not one generic chatbot — <strong style="color:var(--gold)">24 specialized agents</strong> across <strong style="color:var(--gold)">10 key disciplines</strong>, all orchestrated by <strong style="color:#40b0e0">Billy</strong>, your lead AI manager.</p>
           <p style="color:var(--text3);font-size:14px;line-height:1.8;margin-bottom:14px;max-width:600px;">Billy receives your request, breaks it down, delegates each piece to the right expert agent. They collaborate, cross-check each other's work, and deliver a unified expert-level result. Need more agents? Create them infinitely.</p>
           <p style="color:var(--text3);font-size:14px;line-height:1.8;margin-bottom:28px;max-width:600px;">The best part? <strong style="color:var(--text1)">100% private</strong>. Stored locally on your infrastructure with persistent memory. Protected by <strong style="color:var(--gold)">7 layers of encryption</strong> — your data never leaves, never gets shared, never gets used to train other models. The power of Claude, Gemini, and top LLMs — at <strong style="color:var(--gold)">10x less cost</strong>. Available for enterprises and solo entrepreneurs.</p>
@@ -1900,6 +1969,7 @@
           <div class="fade-up">
             <div class="section-label">Pro Athlete</div>
             <h2 class="section-title">15+ Years at the <span>Haut Niveau</span></h2>
+            <p style="font-size:13px;font-family:var(--mono);color:var(--text3);margin-top:8px;letter-spacing:1px">Strong Wave Service</p>
             <p style="color:var(--text3);font-size:14px;line-height:1.8;margin-bottom:28px">Power Guard · 200cm · 98kg ·
               Ivory Coast National Team member with <strong style="color:var(--gold)">5 FIBA Events</strong> including the
               FIBA World Cup China 2019. Played in different countries and levels across Europe, USA, and Africa.
@@ -2032,6 +2102,7 @@
       <div class="fade-up">
         <div class="section-label">Get in Touch</div>
         <h2 class="section-title">Let's <span>Work Together</span></h2>
+        <p style="font-size:13px;font-family:var(--mono);color:var(--text3);margin-top:8px;letter-spacing:1px">Strong Wave Service</p>
         <p style="max-width:600px;margin:0 auto 0;color:var(--text3);font-size:14px;line-height:1.8">
           Open to consulting mandates, coaching partnerships, AI integration projects, and B2B business conversations.
         </p>
@@ -2438,7 +2509,7 @@
       "15-year career across 5 countries — built lasting relationships with federations, investors, and stakeholders": "Carrière de 15 ans dans 5 pays — relations durables avec fédérations, investisseurs et parties prenantes",
       "Overcame two torn Achilles tendons — returned to compete at the highest professional level": "A surmonté deux ruptures du tendon d'Achille — retour au plus haut niveau professionnel",
       "Transitioned to coaching: mindset performance, player development, and AI for Athletes programs": "Transition vers le coaching : performance mentale, développement des joueurs et programmes IA pour Athlètes",
-      "Founder — FormationPro / Akamee": "Fondateur — FormationPro / Akamee",
+      "Founder — Akamee / FormationPro": "Fondateur — Akamee / FormationPro",
       "Professional Training (CPF / Qualiopi) · Île-de-France": "Formation Professionnelle (CPF / Qualiopi) · Île-de-France",
       "Created an accredited training organization: conflict management, SST, mental performance": "Création d'un organisme de formation accrédité : gestion de conflits, SST, performance mentale",
       "Premium ELITE 360° modules for athletes, staff, and B2B corporate teams": "Modules premium ELITE 360° pour athlètes, staff et équipes B2B",
